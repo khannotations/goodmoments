@@ -4,5 +4,6 @@ FactoryGirl.define do
   factory :user do
   end
 
-  
+  factory :post do
+  end
 end

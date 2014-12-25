@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:google_oauth2]
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   def self.from_omniauth(auth)
     if user = User.find_or_initialize_by(email: auth.info.email)
