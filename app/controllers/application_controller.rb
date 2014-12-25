@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   # Devise methods
   def after_sign_in_path_for(resource)
-    '/protected'
+    write_url
   end
 
   def after_sign_out_path_for(resource)

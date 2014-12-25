@@ -234,7 +234,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'],
     ENV['GOOGLE_CLIENT_SECRET'], scope: 'email,profile',
-    image_aspect_ratio: 'square'
+    image_aspect_ratio: 'square', image_size: { width: 100 }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
