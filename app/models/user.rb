@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
 
+  def pretty_email
+    "#{first_name} #{last_name} <#{email}>"
+  end
+
   def self.from_omniauth(auth)
     if user = User.find_or_initialize_by(email: auth.info.email)
       photo_url = auth.extra.raw_info.picture.sub('?sz=50', '?sz=200')
@@ -19,5 +23,11 @@ class User < ActiveRecord::Base
       user.save!
     end
     user
+  end
+
+  def self.remind_all
+    where(email_reminder: true).each do |user|
+      UserMailer.remind(user).deliver!
+    end
   end
 end

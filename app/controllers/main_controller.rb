@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-  before_action :authenticate_user!, only: [:history, :write, :create]
+  before_action :authenticate_user!, except: [:index, :about]
 
   def history
     @posts = current_user.posts
@@ -13,6 +13,17 @@ class MainController < ApplicationController
     else
       flash[:error] = "Post failed to create. " + error_messages(@post)
     end
+  end
+
+  def toggleEmail
+    current_user.email_reminder = !current_user.email_reminder
+    current_user.save
+    render json: ""
+  end
+
+  def destroy
+    current_user.destroy
+    redirect_to root_path
   end
 
   protected

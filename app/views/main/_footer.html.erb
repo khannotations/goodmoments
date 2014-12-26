@@ -1,0 +1,16 @@
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="small" style="float: right;">
+          <%= check_box_tag "email_reminder", "toggle", current_user.email_reminder %>
+           Email reminders
+          &nbsp; &middot; &nbsp;
+          <a href="<%= destroy_user_path %>" class="link">
+            Delete account
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
