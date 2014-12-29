@@ -2,7 +2,7 @@ class MainController < ApplicationController
   before_action :authenticate_user!, except: [:index, :about]
 
   def history
-    @posts = current_user.posts
+    @posts = current_user.posts.order(created_at: :desc)
   end
 
   def create
