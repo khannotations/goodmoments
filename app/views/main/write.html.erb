@@ -1,24 +1,26 @@
-<div class="container padding">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="nav-btns">
-        <div class="btn nav small">
-          <%= link_to "Your story", history_path %>
-        </div><!-- Inline block hack
-     --><div class="btn nav small">
-          <%= link_to "Logout", destroy_user_session_path %>
+<div class="container">
+  <div class="inner padding">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="nav-btns">
+          <div class="btn nav small">
+            <%= link_to "Your story", history_path %>
+          </div><!-- Inline block hack
+       --><div class="btn nav small">
+            <%= link_to "Logout", destroy_user_session_path %>
+          </div>
         </div>
+        <h1>Write</h1>
+        <br>
+        <p>
+          <em><%= Date.today.strftime("%A, %B %-d, %Y") %>:</em>
+        </p>
+        <br>
+        <%= form_tag "/post", method: "post" do %>
+          <textarea name="text" required placeholder="Today, there's something I'm grateful for, and maybe even a good moment I had, or just some thoughts..."></textarea>
+          <input type="submit" value="Submit" class="btn">
+        <% end %>
       </div>
-      <h1>Write</h1>
-      <br>
-      <p>
-        <em><%= Date.today.strftime("%A, %B %-d, %Y") %>:</em>
-      </p>
-      <br>
-      <%= form_tag "/post", method: "post" do %>
-        <textarea name="text" required placeholder="Today, there's something I'm grateful for, and maybe even a good moment I had, or just some thoughts..."></textarea>
-        <input type="submit" value="Submit" class="btn">
-      <% end %>
     </div>
   </div>
 </div>
