@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // Manually add CSRF token to jQuery requests
   var token = $('meta[name=csrf-token]').attr('content');
   $("textarea").focus();
   $("#email_reminder").click(function() {

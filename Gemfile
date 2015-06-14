@@ -1,15 +1,17 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.4'
+gem 'rails', '4.2.1'
 gem 'pg'
 gem 'thin'
 gem 'devise'
 gem 'omniauth-google-oauth2'
+gem 'newrelic_rpm'
 
-gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'bourbon'
 gem 'uglifier', '>= 1.3.0'
+gem 'redcarpet'
 
 # Javascript
 gem 'jquery-rails'
@@ -24,6 +26,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'better_errors'
   gem 'binding_of_caller'
-  # gem 'pry-debugger'
+  gem 'byebug'
+  gem 'quiet_assets'
 end
 
