@@ -1,17 +1,17 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
-gem 'pg'
-gem 'thin'
-gem 'devise'
-gem 'omniauth-google-oauth2'
-gem 'newrelic_rpm'
+gem 'pg'                     # Database
+gem 'thin'                   # Nice server
+gem 'devise'                 # User login
+gem 'omniauth-google-oauth2' # with google
+gem 'newrelic_rpm'           # Site monitoring
 
 gem 'sass-rails'
-gem 'bootstrap-sass'
-gem 'bourbon'
+gem 'bootstrap-sass'         # Bootstrap
+gem 'bourbon'                # Useful methods for sass
 gem 'uglifier', '>= 1.3.0'
-gem 'redcarpet'
+gem 'redcarpet'              # Markdown parsing
 
 # Javascript
 gem 'jquery-rails'

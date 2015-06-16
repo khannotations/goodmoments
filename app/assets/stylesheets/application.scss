@@ -1,8 +1,10 @@
 @import "bourbon";
-// Bootstrap
+// Bootstrap (pull in only the components I need)
 @import "bootstrap/mixins";
 @import "bootstrap/variables";
 @import "bootstrap/scaffolding";
 @import "bootstrap/grid";
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
 // Styles
 @import "style";

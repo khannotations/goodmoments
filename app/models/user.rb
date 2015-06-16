@@ -3,14 +3,17 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :validatable
+  # Add omniauthable to login with Google
   devise :omniauthable, :omniauth_providers => [:google_oauth2]
 
   has_many :posts, dependent: :destroy
 
+  # For emailing users
   def pretty_email
     "#{first_name} #{last_name} <#{email}>"
   end
 
+  # Method necessary for omniauth gem, with Devise. 
   def self.from_omniauth(auth)
     if user = User.find_or_initialize_by(email: auth.info.email)
       photo_url = auth.extra.raw_info.picture.sub('?sz=50', '?sz=200')

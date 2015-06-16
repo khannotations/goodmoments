@@ -2,7 +2,7 @@
   <div class="inner padding">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <div class="nav-btns">
+        <div class="pull-right">
           <div class="btn nav small">
             <%= link_to "Write", write_path %>
           </div><!-- Inline block hack
@@ -11,12 +11,15 @@
           </div>
         </div>
         <h1>Your story</h1>
-        <br>
         <% @posts.each do |post| %>
           <%= render partial: 'post', locals: {post: post} %>
         <% end %>
+        <!-- Make sure to show something nice in the blank case! -->
         <% if @posts.length == 0 %>
-          <p>Start your story on the <%= link_to "write", write_path %> page</p>
+          <br><br><br>
+          <p class="center big">
+            Start your story on the <%= link_to "write", write_path, :class => "underline" %> page
+          </p>
         <% end %>
     </div>
   </div>

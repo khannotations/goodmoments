@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       :omniauth_callbacks => "auth/omniauth_callbacks",
       :sessions => 'auth/sessions'
     },
+    # Devise customization
     :path => '',
     :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
