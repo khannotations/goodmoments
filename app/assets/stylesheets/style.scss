@@ -105,6 +105,12 @@ hr {
   border-top: 1px solid $light-grey;
 }
 
+.post-body {
+  p {
+    margin-bottom: 10px;
+  }
+}
+
 .footer {
   position: fixed;
   width: 100%;

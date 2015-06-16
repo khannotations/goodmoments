@@ -2,7 +2,7 @@
   <em>Posted <%= post.created_at.strftime("%l:%M%p %A, %B %-d, %Y") %></em>
 </p>
 <br>
-<p>
+<div class="post-body">
   <%= post.html_text.html_safe %>
-</p>
+</div>
 <hr>
