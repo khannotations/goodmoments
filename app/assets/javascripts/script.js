@@ -6,6 +6,6 @@ $(document).ready(function() {
     $.ajax({
       url: "/toggleEmail?&authenticity_token=" + token,
       method: "PUT"
-    })
+    });
   });
 });
